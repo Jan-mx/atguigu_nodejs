@@ -21,13 +21,11 @@ files.forEach((item) => {
     // console.log(data);
     let [num,name] = data
 
-
-    if(Number(i) < 10){
-        i = '0' + i
-    }
+    // 判断
+    let numStr = i < 10 ? '0' + i : i;
 
     // 创建新的文件名
-    let newName = i + '_' + name;
+    let newName = numStr + '_' + name;
     // 重命名
     fs.renameSync(`./code/${item}`,`./code/${newName}`)
 

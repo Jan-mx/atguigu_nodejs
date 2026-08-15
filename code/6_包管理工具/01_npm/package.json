@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "学习npm",
+  "license": "ISC",
+  "author": "Jan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./03_http.js",
+    "start": "node ./03_http.js"
+  },
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {
+    "less": "^4.9.0"
+  }
+}

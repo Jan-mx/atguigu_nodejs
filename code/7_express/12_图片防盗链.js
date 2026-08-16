@@ -4,6 +4,8 @@ const express = require('express');
 //创建应用对象
 const app = express();
 
+const path = require('path');
+
 //声明中间件
 app.use((req, res, next) => {
   //检测请求头中的 referer 是否为 127.0.0.1
@@ -25,8 +27,9 @@ app.use((req, res, next) => {
 });
 
 //静态资源中间件设置
-app.use(express.static(__dirname + '/public'));
-// console.log(__dirname + '/public');
+const publicPath = path.join(__dirname + './public')
+app.use(express.static(publicPath));
+// console.log(publicPath);
 
 //监听端口, 启动服务
 app.listen(9000, () => {

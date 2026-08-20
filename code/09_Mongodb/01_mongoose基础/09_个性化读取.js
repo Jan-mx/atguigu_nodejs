@@ -25,7 +25,7 @@ async function main() {
 
         console.log('连接成功');
 
-         // 
+        // 设置字段
         // const result = await BookModel.find().select({
         //     name:1,
         //     author:1,
@@ -39,15 +39,30 @@ async function main() {
         //     console.log('没有找到符合条件的书籍');
         // }
 
+        // 数据排序
+        // const result = await BookModel.find()
+        // .select({
+        //     name:1,
+        //     author:1,
+        //     price:1     // 1 选择结果包含该字段 0 选择结果不包含该字段
+        // })
+        // .sort({
+        //     price:-1    // 1 为升向排序 -1为降向排序
+        // })
 
-        const result = await BookModel.find().select({
+        // 数据的截取
+         const result = await BookModel.find()
+        .select({
             name:1,
             author:1,
             price:1     // 1 选择结果包含该字段 0 选择结果不包含该字段
-        }).sort({
+        })
+        .sort({
             price:-1    // 1 为升向排序 -1为降向排序
         })
-
+        .skip(3)
+        .limit(3)
+        
 
         if (result.length > 0) {
             console.log('查询成功：', result);
